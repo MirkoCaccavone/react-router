@@ -1,7 +1,67 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+
+}
+
+body {
+  padding-top: 40px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
+  background-size: 300% 300%;
+  animation: gradient-animation 20s ease infinite;
+}
+
+/********************************
+   header rules
+*********************************/
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.nav-bar a {
+  text-decoration: none;
+  color: #000;
+  font-size: 25px;
+  margin: 10px;
+  border: 1px solid black;
+  padding: 5px;
+  background-color: rgb(102, 194, 247);
+  border-radius: 10px;
+}
+
+.nav-bar a.active {
+  background-color: darkblue;
+  color: white;
+}
+
+
+
 h1 {
   text-align: center;
 
 }
+
+
+/********************************
+   postForm / ListPost rules
+*********************************/
 
 #formPost input,
 #formPost textarea {
@@ -9,7 +69,7 @@ h1 {
   padding: 5px;
   margin: 10px auto;
   width: 350px;
-  height: 30px;
+  height: 40px;
   border-radius: 10px;
   border: 2px solid black;
   text-align: center;
@@ -34,16 +94,17 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   margin-top: 35px;
   border: 1px solid black;
   width: 350px;
+  padding: 5px;
   text-align: center;
+  background-color: #fff;
 }
 
 .postItem img {
   width: 300px;
-  margin: auto;
+  margin: 10px auto;
 }
 
 .contenuto {
@@ -53,7 +114,7 @@ h1 {
 .deleteButton {
   width: 100px;
   height: 30px;
-  margin: auto;
+  margin: 10px auto;
   font-size: 15px;
   color: red;
   background-color: #fff;
