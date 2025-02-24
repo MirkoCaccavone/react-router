@@ -1,3 +1,4 @@
+// import di PostForm.jsx per mostrarlo nella pagina corrente
 import PostForm from "../components/PostForm"
 
 export default function ListPost() {
@@ -5,7 +6,7 @@ export default function ListPost() {
         <>
             <div>
                 <h1>
-                    rotta dei post
+                    AGGIUNGI IL TUO NUOVO POST
                 </h1>
             </div>
             <PostForm />
