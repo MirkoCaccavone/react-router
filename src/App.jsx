@@ -18,7 +18,9 @@ function App() {
 
     <BrowserRouter>
       <Routes>
+        {/* DefaultLayout viene utilizzato come layout di default per le rotte */}
         <Route element={<DefaultLayout />}>
+          {/* Definizione delle rotte */}
           <Route path="/" element={<HomePage />} />
           <Route path="/chisiamo" element={<ChiSiamo />} />
           <Route path="/listpost" element={<ListPost />} />
