@@ -7,7 +7,9 @@ import DefaultLayout from "./layouts/DefaultLayout";
 // Pages
 import HomePage from "./pages/HomePage"
 import ChiSiamo from "./pages/ChiSiamo"
-import ListPost from "./pages/ListPost"
+import PostListPage from "./pages/PostListPage"
+import PostCreatePage from "./pages/PostCreatePage"
+import PostDetailPage from "./pages/PostDetailPage"
 // import Header from "./components/Header";
 
 
@@ -23,7 +25,17 @@ function App() {
           {/* Definizione delle rotte */}
           <Route path="/" element={<HomePage />} />
           <Route path="/chisiamo" element={<ChiSiamo />} />
-          <Route path="/listpost" element={<ListPost />} />
+          {/* <Route path="/postlist" element={<PostList />} /> */}
+          <Route path="/posts">
+            <Route index element={<PostListPage />} />
+            <Route path="create" element={<PostCreatePage />} />
+            <Route path=":id" element={<PostDetailPage />} />
+
+
+
+
+          </Route>
+
 
         </Route>
 
