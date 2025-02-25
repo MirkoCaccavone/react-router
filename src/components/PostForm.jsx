@@ -16,22 +16,22 @@ const PostForm = () => {
     // state per la gestione delle informazioni raccolte dai campi del form
     const [formData, setFormData] = useState(initialFormData)
 
-    // funzione di gestione chiamata all'API
-    function fetchPosts() {
-        axios.get("http://localhost:3000/posts")
-            .then((res) => {
-                setPosts(res.data);
-            })
-            .catch(function (error) {
-                console.log(error);
+    // // funzione di gestione chiamata all'API
+    // function fetchPosts() {
+    //     axios.get("http://localhost:3000/posts")
+    //         .then((res) => {
+    //             setPosts(res.data);
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
 
-            }
-            )
-    }
+    //         }
+    //         )
+    // }
 
-    // richiamo la funzione di richiesta dati al caricamento del componente
-    // Solo al primo rendering
-    useEffect(fetchPosts, []);
+    // // richiamo la funzione di richiesta dati al caricamento del componente
+    // // Solo al primo rendering
+    // useEffect(fetchPosts, []);
 
     // funzione di gestione delle info dei campi
     function handleFormData(e) {
@@ -66,23 +66,23 @@ const PostForm = () => {
 
     }
 
-    // funzione per la cancellazione dei post
-    function deletePost(idPost) {
-        const updatePost = posts.filter((post) => {
-            return post.id !== idPost;
-        })
+    // // funzione per la cancellazione dei post
+    // function deletePost(idPost) {
+    //     const updatePost = posts.filter((post) => {
+    //         return post.id !== idPost;
+    //     })
 
-        // chiamata axios alla rotta di delete
-        axios.delete(`http://localhost:3000/posts/${idPost}`)
-            .then(res =>
-                // lo sostituiamo
-                setPosts(updatePost)
-            )
-            .catch(err => console.log(err)
-            )
+    //     // chiamata axios alla rotta di delete
+    //     axios.delete(`http://localhost:3000/posts/${idPost}`)
+    //         .then(res =>
+    //             // lo sostituiamo
+    //             setPosts(updatePost)
+    //         )
+    //         .catch(err => console.log(err)
+    //         )
 
 
-    }
+    // }
 
     // contenuto della pagina
     return (
@@ -136,7 +136,7 @@ const PostForm = () => {
 
 
 
-            <div className="containerPost">
+            {/* <div className="containerPost">
 
                 {posts.length === 0 ? (
 
@@ -147,15 +147,15 @@ const PostForm = () => {
                         <div className="postItem" key={post.id}>
                             <h2>{post.title}</h2>
                             {/* <h3>{post.autore}</h3> */}
-                            <p className="contenuto">{post.content}</p>
-                            <img src={post.image} alt={post.title} />
-                            <p>{post.tags.join(', ')}</p>
-                            {/* <span>{post.published ? "post pubblicato" : "post non pubblicato"}</span> */}
-                            <button className="deleteButton" onClick={() => deletePost(post.id)}>Cancella</button>
-                        </div>
-                    ))
+            {/* <p className="contenuto">{post.content}</p>
+            <img src={post.image} alt={post.title} />
+            <p>{post.tags.join(', ')}</p> */}
+            {/* <span>{post.published ? "post pubblicato" : "post non pubblicato"}</span> */}
+            {/* <button className="deleteButton" onClick={() => deletePost(post.id)}>Cancella</button>
+        </div > */}
+            {/* ))
                 )}
-            </div>
+            </div > */}
         </>
     )
 }
